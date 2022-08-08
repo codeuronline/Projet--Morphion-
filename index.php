@@ -21,14 +21,10 @@ elseif ($info_niveau == 'moyen') // Moyen (juste un peu :-) plus dur
 	$niveau_ia = 2;
 	$niveau = 'moyen';
 }
-elseif ($info_niveau == 'difficile') // Difficile = IA imbattable
+elseif ($info_niveau == 'difficile') // > Difficile = IA imbattable
 {
 	$niveau_ia = 5;
-	/*
-	Profondeur 5 déterminée sur des tests basés entre la vitesse d'exécution du script et l'efficacité de l'IA.
-	Avec une profondeur de 9 (maximum de possibilités au vu du nombre de cases): plus de 6 secondes d'exécution pour le premier coup!
-	Sans pour autant sacrifier l'efficacité de l'IA, une profondeur de 5 permet de n'attendre que moins d'une seconde, ce qui est plus raisonnable.
-	*/
+	
 	$niveau = 'difficile';
 }
 else
