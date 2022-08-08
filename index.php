@@ -346,7 +346,7 @@ if (count($_POST) > 0) // On a joué
 	var_dump($_POST);
 	foreach($_POST as $nombre => $osef
 	)
-		//correction appaorte pour que l'element défini se rapporte a un chiffre et non une chaine de caractere
+		//correction apporte pour que l'element défini se rapporte a un chiffre et non une chaine de caractere
 		$caseJoueeParJoueur = (preg_match('/_x/',$nombre,$matches)) ? intval(str_replace('_x','',$nombre)):intval(str_replace('_y','',$nombre));
 	 	var_dump("casJoueeParJoueur",$caseJoueeParJoueur);
 		
