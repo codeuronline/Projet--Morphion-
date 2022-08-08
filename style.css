@@ -1,0 +1,28 @@
+table td {
+	border: 1px solid;
+	empty-cells: show;
+	height:50px;
+	width:50px;
+}
+
+body {
+	background-color: #212121;
+	color: #999999;
+    font-family: Tahoma,"Trebuchet MS",sans-serif;
+    font-size: 15px;
+}
+
+a {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+.niveau_choisi {
+    color: #CCCCCC;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.ligne {
+	display: inline;
+}
