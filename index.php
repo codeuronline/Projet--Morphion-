@@ -1,10 +1,9 @@
 <?php
 /*
-Script de morpion avec IA 
-Code inspiré d'un tutoriel 
+Script de morpion avec IA Code inspiré d'un tutoriel 
 */
 
-session_start(); // Démarrage de la session de jeu
+session_start(); 
 
 $signe_ordi = 1;
 $signe_joueur = 2;
