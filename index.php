@@ -1,9 +1,7 @@
 <?php
 /*
-Script de morpion avec IA par Adrien dans le cadre d'un TPE sur l'Intelligence Artificielle
-Cadre d'un script de Guillaume Normand
-Code inspiré d'un tutoriel de martin9_36 sur le Site du Zéro
-Distribué sous licence GNU GPL
+Script de morpion avec IA 
+Code inspiré d'un tutoriel 
 */
 
 session_start(); // Démarrage de la session de jeu
