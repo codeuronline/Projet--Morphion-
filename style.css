@@ -1,13 +1,27 @@
+.zone{
+    width: 150px;
+    height: 150px;
+}
 table td {
 	border: 1px solid;
 	empty-cells: show;
-	height:50px;
-	width:50px;
+	height:150px;
+	width:150px;
+    align-items: center;
+    justify-content: center;
 }
 
+fieldset{
+    border: 2px white;
+}
+img{
+    padding:1px;
+    width:100%;
+    height: 100%;
+}
 body {
-	background-color: #212121;
-	color: #999999;
+	background-color:white;
+	color:gray;
     font-family: Tahoma,"Trebuchet MS",sans-serif;
     font-size: 15px;
 }
@@ -16,48 +30,23 @@ a {
     color: #CCCCCC;
     text-decoration: none;
 }
+a:after{
+    color:green;
+    text-decoration: underline;
+}
+a:hover{
+    color: greenyellow;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
 
 .niveau_choisi {
-    color: #CCCCCC;
+    color:green;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .ligne {
 	display: inline;
-}
-del,
-ins {
-    display: block;
-    text-decoration: none;
-    position: relative;
-}
-
-del {
-    background-color: #fbb;
-}
-
-ins {
-    background-color: #d4fcbc;
-}
-
-del::before,
-ins::before {
-    position: absolute;
-    left: .5rem;
-    font-family: monospace;
-}
-
-del::before {
-    content: '−';
-}
-
-ins::before {
-    content: '+';
-}
-
-p {
-    margin: 0 1.8rem 0;
-    font-family: Georgia, serif;
-    font-size: 1rem;
 }

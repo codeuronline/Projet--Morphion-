@@ -37,10 +37,12 @@ function afficher_formulaire($jouer = true) // Affiche le formulaire
 {
 	global $signe_ordi, $signe_joueur, $niveau;
 
-	$formulaire = 'Choisissez la difficulté de l\'ordinateur: ';
-	$formulaire .= ($niveau == 'facile') ? '<strong><ins>Facile</ins></strong> ' : '<a href="index.php?niveau=facile">Facile</a> ';
-	$formulaire .= ($niveau == 'moyen') ? ' <strong><ins>Moyen</ins></strong> ' : ' <a href="index.php?niveau=moyen">Moyen</a>';
-	$formulaire .= ($niveau == 'difficile') ? ' <strong><ins>Difficile</ins></strong>' : ' <a href="index.php?niveau=difficile">Difficile</a>';
+	$formulaire = "Choisissez la difficulté de l'ordinateur:";
+	$formulaire .= "<br><br>";
+	$formulaire .= ($niveau == 'facile') ? '<strong class="niveau_choisi">Facile</strong> ' : '<a href="index.php?niveau=facile">Facile</a>|';
+	$formulaire .= ($niveau == 'moyen') ? '| <strong class="niveau_choisi">Moyen</strong>|' : '|<a href="index.php?niveau=moyen">Moyen</a>|';
+	$formulaire .= ($niveau == 'difficile') ? ' <strong class="niveau_choisi">Difficile</strong>' : ' <a href="index.php?niveau=difficile">Difficile</a>';
+	$formulaire .="<br><br>";
 	$formulaire .= '<form action="index.php?niveau=' . $niveau . '" method="post"><table>';
 	for ($i = 0; $i < 3; $i++) {
 		$formulaire .= '<tr>';
@@ -51,7 +53,7 @@ function afficher_formulaire($jouer = true) // Affiche le formulaire
 				$formulaire .= '<td>';
 
 				if ($jouer)
-					$formulaire .= '<input name="' . $nb . '" src="blanc.png" type="image" value="submit" align="middle">';
+					$formulaire .= '<input class="zone" name="' . $nb . '" src="blanc.png" type="image" value="submit" align="middle">';
 
 				$formulaire .= '</td>';
 			} else // Case occupée
@@ -329,7 +331,7 @@ if (count($_POST) > 0) // On a joué
 		// Protection anti-triche: si le nombre de cases occupées par le joueur est trop important, on arrête la partie
 		unset($_SESSION['morpion']); // On détruit les variables de la session
 		session_destroy(); // On détruit la session pour le prochain jeu
-		echo "On ne triche pas svp :-)<br /><a href='index.php?niveau=$niveau'>Rejouer?</a><br />";
+		echo "<br />On ne triche pas svp :-)<br /><a href='index.php?niveau=$niveau'>Rejouer?</a><br />";
 		exit();
 	}
 
@@ -354,7 +356,7 @@ if (count($_POST) > 0) // On a joué
 		if ($resultat == 2) // Si le joueur a gagné
 		{
 			afficher_formulaire(false); // Affichage du formulaire
-			echo "Vous avez gagné.<br /><a href='index.php?niveau=$niveau'>Rejouer?</a><br />";
+			echo "<br />Vous avez gagné.<br /><a href='index.php?niveau=$niveau'>Rejouer?</a><br />";
 			unset($_SESSION['morpion']); // On détruit les variables de la session
 			session_destroy(); // On détruit la session pour le prochain jeu
 		} else {
@@ -365,7 +367,7 @@ if (count($_POST) > 0) // On a joué
 			if ($resultat == 1) // Si l'IA a gagné
 			{
 				afficher_formulaire(false); // Affichage du formulaire
-				echo "Vous avez perdu.<br /><a href='index.php?niveau=$niveau'>Rejouer</a><br />";
+				echo "<br />Vous avez perdu.<br /><a href='index.php?niveau=$niveau'>Rejouer</a><br />";
 				unset($_SESSION['morpion']); // On détruit les variables de la session
 				session_destroy(); // On détruit la session pour le prochain jeu
 			} else
@@ -385,6 +387,6 @@ if (count($_POST) > 0) // On a joué
 
 $temps_fin = microtime(true); // Fin du compteur
 
-echo "Temps d'exécution : " . round($temps_fin - $temps_debut, 4) . " secondes";
+echo "<br />Temps d'exécution : " . round($temps_fin - $temps_debut, 4) . " secondes";
 
 include('footer.php');
